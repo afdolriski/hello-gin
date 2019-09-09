@@ -19,10 +19,8 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
 
-    - name: Get dependencies
+    - name: Build image
       run: |
-        go get -u github.com/kardianos/govendor
-
-        which docker
+        docker build . -t hello-gin
     - name: Build
       run: go build -v .
