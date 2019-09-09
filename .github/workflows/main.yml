@@ -23,6 +23,6 @@ jobs:
       run: |
         go get -u github.com/kardianos/govendor
 
-        $HOME/go/bin/govendor sync
+        which docker
     - name: Build
       run: go build -v .
