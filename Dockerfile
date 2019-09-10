@@ -8,7 +8,7 @@ ENV APP_ENV ${APP_ENV}
 ENV PROJECT_DIR /go/src/hello-gin
 
 # Install git.
-# RUN apk update && apk add --no-cache git
+RUN apk update && apk add --no-cache git
 
 RUN set -ex \
         && apk add --no-cache --virtual build-dependencies \
