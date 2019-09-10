@@ -25,7 +25,7 @@ jobs:
 
     - name: Setup aws elb cli
       run: |
-        sudo killall apt apt-get
+        # sudo killall apt apt-get
         sudo apt-get clean && sudo apt-get update -y
         # sudo apt-get install --force-yes -y
         sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y git-core build-essential
