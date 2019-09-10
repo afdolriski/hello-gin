@@ -22,8 +22,6 @@ jobs:
     - name: Build image
       run: |
         docker build . -t hello-gin
-    - name: Build
-      run: go build -v .
 
     - name: Setup aws elb cli
       run: |
