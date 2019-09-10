@@ -24,8 +24,10 @@ jobs:
         docker build . -t hello-gin
 
     - name: Setup aws elb cli
-      uses: actions/aws/cli@master
-      with:
-        args: eb list -a
-        # secrets: [AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY]
-                
+      run: |
+        apt-get clean && sudo apt-get update -y
+        apt-get install --force-yes -y
+        apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y git-core build-essential
+        build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev
+        git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
+        ./aws-elastic-beanstalk-cli-setup/scripts/bundled_installer
