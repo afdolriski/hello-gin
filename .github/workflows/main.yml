@@ -19,14 +19,14 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
 
-    - name: Build image
-      run: |
-        docker build . -t hello-gin
+    # - name: Build image
+    #   run: |
+    #     docker build . -t hello-gin
 
     - name: Setup aws elb cli
       run: |
-        apt-get clean && sudo apt-get update -y
-        apt-get install --force-yes -y
+        apt-get clean && apt-get update -y
+        # apt-get install --force-yes -y
         apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y git-core build-essential
         build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev
         git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
