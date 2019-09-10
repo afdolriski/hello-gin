@@ -27,7 +27,5 @@ jobs:
       uses: actions/aws/cli@master
       with:
         args: eb list -a
-        secrets:
-          - AWS_ACCESS_KEY_ID
-          - AWS_SECRET_ACCESS_KEY
+        secrets: ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
                 
