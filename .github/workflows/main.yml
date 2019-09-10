@@ -25,8 +25,9 @@ jobs:
 
     - name: Setup aws elb cli
       uses: actions/aws/cli@master
-      args: eb list -a
-      secrets:
-        - AWS_ACCESS_KEY_ID
-        - AWS_SECRET_ACCESS_KEY
+      with:
+        args: eb list -a
+        secrets:
+          - AWS_ACCESS_KEY_ID
+          - AWS_SECRET_ACCESS_KEY
                 
